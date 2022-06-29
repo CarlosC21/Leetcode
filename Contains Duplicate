@@ -1,0 +1,32 @@
+# PYTHON
+# given integer arr of nums
+# return True if any value appears at least twice in arr
+# return False if every element is distinct
+
+#Ex. 1
+# Input: nums = [1,2,3,1]
+# Output: True
+
+#Ex. 2
+# Input: nums = [1,2,3,4]
+# Output: False
+
+# count() returns the number of elements with specified value
+# set() creates a set object aka {}
+
+# sorting will help to iterate once
+# Hashset allows to insert elements into hashset
+
+# Time complexity: only scanned through list once. O(n)
+# Space complexity: Creating a hashset makes it O(n)
+
+#----------code----------#
+
+def duplicates(nums):
+    hashset = set()
+    
+    for n in nums:
+        if n in hashset:
+            return True
+        hashset.add(n)
+    return False
