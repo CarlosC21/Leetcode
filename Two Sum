@@ -1,0 +1,28 @@
+# PYTHON 
+# Given arr of integers, return indices of two numbers so they add up to specific target
+# # Cannot use the same element twice
+
+# Input: nums = [2,7,11,15], target = 9
+# Output: [0,1]
+
+# Input: nums = [3,2,4], target = 6
+# Output: [1,2]
+
+# enumerate(iterable, start=0) to get a counter in a loop.
+# iterable: any object that supports iteration. 
+
+# Time: O(n) Iterating through array once and adding each value to hashmap and checking
+# if value exists in hashmap
+# Space: using extra memory with hashmap O(n)
+
+def twosum(nums, target):
+  prevMap = {}
+  
+  for index, num in enumerate(nums):
+    diff = target - num
+    if diff in prevMap:
+      return [prevMap[diff], index]
+    prevMap[num] = index
+  return 
+ 
+print(twosum([2,7,11,15], 9))
